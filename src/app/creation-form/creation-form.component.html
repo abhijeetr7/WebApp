@@ -1,0 +1,121 @@
+<body>
+    <div class="container">
+        <header>Create A Form</header>
+        <i class="fas fa-table me-1"></i>
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Please Define Parameters</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="webpageName">Webpage Name</label>
+                            <input type="text" class="form-control" name="" id="webpageName"
+                                [(ngModel)]="webpageModel.webpageName" #webpageName="ngModel" name="webpageName" required
+                                autofocus placeholder="Enter Webpage Name" maxlength="100">
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="label">label Name</label>
+                            <input type="text" class="form-control" name="" id="label"
+                                [(ngModel)]="model.label" #label="ngModel" name="label" required
+                                autofocus placeholder="Enter label Name" maxlength="100">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Input Type</label>
+                            <select class="browser-default custom-select" [(ngModel)]="model.type" #type="ngModel"
+                                placeholder="Select Type" name="type" required>
+                                <option value="Textarea">Text</option>
+                                <option value="number">Number</option>
+                                <option value="Dropdown">Dropdown</option>
+                                <!-- <option value="Radio">Radio Button</option> -->
+                                <!-- <option value="Checkbox">Checkbox</option> -->
+                                <option value="Date">Date-Control</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="sequence">Sequence</label>
+                            <input type="number" class="form-control" name="" id="sequence" [(ngModel)]="model.sequence"
+                                #sequence="ngModel" name="sequence" required autofocus placeholder="Enter sequence"
+                                maxlength="3">
+                        </div>
+                        <!-- <div class="input-field">
+                            <label>Occupation</label>
+                            <input type="text" placeholder="Enter your ccupation" required>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="details personal">
+                    <span class="title">Please Define Parameters</span>
+                    <div class="fields">
+
+                        <div>
+                            <input class="form-check-input" type="checkbox" id="mandatory" name="mandatory"
+                                [(ngModel)]="validatorModel.mandatory" #mandatory="ngModel">
+                            <label class="form-check-label" for="mandatory"> Mandatory</label>
+                        </div>
+                        <div class="input-field">
+                            <label class="form-check-label" for="inlineRadio2">Minlength</label>
+
+                            <input type="number" [(ngModel)]="validatorModel.minlength" #minlength="ngModel"
+                                name="minlength" id="minlength" autofocus placeholder="minlength" maxlength="20"
+                                min="0">
+                        </div>
+                        <div class="input-field">
+                            <label class="form-check-label" for="inlineRadio2">Maxlength</label>
+                            <input type="number" [(ngModel)]="validatorModel.maxlength" #maxlength="ngModel"
+                                name="maxlength" name="maxlength" id="maxlength" autofocus placeholder="maxlength"
+                                maxlength="20" min="0">
+                        </div>
+
+                    </div>
+                    <div>
+                        <!-- class="col-md-12 text-right mt-4 mb-4 borderTop" -->
+                        <button>
+                            <span class="btnText" style="padding: 8px 15px;" (click)="addnew()">Add</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                    <div class=" col-md-12 table-responsive pl-0 pr-0">
+                        <table class="mb-0 table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sequence</th>
+                                    <th>Parameter Name</th>
+                                    <th>Configuration</th>
+                                    <th>Validations</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let lst of paramList;let j = index">
+                                <tr>
+                                    <td>{{lst.sequence}}</td>
+                                    <td>{{lst.label}}</td>
+                                    <td>{{lst.type}}</td>
+                                    <td>
+                                        <a *ngIf="validatorModel.mandatory!=null">Mandatory:
+                                            {{validatorModel.mandatory+" , "}}</a>
+                                        <a *ngIf="validatorModel.minlength!=null">Minlength:
+                                            {{validatorModel.minlength+" , "}}</a>
+                                        <a *ngIf="validatorModel.maxlength!=null">Maxlength:
+                                            {{validatorModel.maxlength+" , "}}</a>
+                                    </td>
+                                    <td>
+                                        <img src="./assets/images/delete.svg" alt="delete" (click)="spliceEntry(j)">
+                                        &nbsp;&nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<!-- <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Bioprime Microbes</title>
+  <link href="./assets/css/style.min.css" rel="stylesheet" />
+  <link href="./assets/css/styles.css" rel="stylesheet" />
+  <link href="./assets/css/style1.css" rel="stylesheet" />
+  <script src="js/all.js" crossorigin="anonymous"></script>
+</head> -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Helianthus</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+
+  <link href="./assets/css/styles.css"  rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+
+  <!-- <script src="./assets/js/all.js" ></script> -->
+  <base href="/">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+</head>
+
+
+<body>
+  <app-root></app-root>
+
+  <!-- <script src="./assets/js/script.js"></script> -->
+
+  
+  <script>
+    const navbarMenu = document.querySelector(".navbar .links");
+const hamburgerBtn = document.querySelector(".hamburger-btn");
+const hideMenuBtn = navbarMenu.querySelector(".close-btn");
+const showPopupBtn = document.querySelector(".login-btn");
+const formPopup = document.querySelector(".form-popup");
+const hidePopupBtn = formPopup.querySelector(".close-btn");
+const signupLoginLink = formPopup.querySelectorAll(".bottom-link a");
+
+// Show mobile menu
+hamburgerBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("show-menu");
+});
+
+// Hide mobile menu
+hideMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+
+// Show login popup
+showPopupBtn.addEventListener("click", () => {
+  document.body.classList.toggle("show-popup");
+});
+
+// Hide login popup
+hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
+
+// Show or hide signup form
+signupLoginLink.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    formPopup.classList[link.id === "signup-link" ? "add" : "remove"](
+      "show-signup"
+    );
+  });
+});
+
+  </script>
+</body>
+
+</html>
