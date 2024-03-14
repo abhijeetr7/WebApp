@@ -1,27 +1,27 @@
 <body>
     <div class="container">
-        <header>Create A Form</header>
+        <header>{{ pageTitle }}</header>
         <i class="fas fa-table me-1"></i>
         <form action="#">
-            <div class="form first">
+            <div class="">
                 <div class="details personal">
-                    <span class="title">Please Define Parameters</span>
+                    <span class="title">Please Define Webpage</span>
 
                     <div class="fields">
                         <div class="input-field">
                             <label for="webpageName">Webpage Name</label>
                             <input type="text" class="form-control" name="" id="webpageName"
-                                [(ngModel)]="webpageModel.webpageName" #webpageName="ngModel" name="webpageName" required
-                                autofocus placeholder="Enter Webpage Name" maxlength="100">
+                                [(ngModel)]="webpageModel.webpageName" #webpageName="ngModel" name="webpageName"
+                                required autofocus placeholder="Enter Webpage Name" maxlength="100">
                         </div>
                     </div>
 
                     <div class="fields">
                         <div class="input-field">
                             <label for="label">label Name</label>
-                            <input type="text" class="form-control" name="" id="label"
-                                [(ngModel)]="model.label" #label="ngModel" name="label" required
-                                autofocus placeholder="Enter label Name" maxlength="100">
+                            <input type="text" class="form-control" name="" id="label" [(ngModel)]="model.label"
+                                #label="ngModel" name="label" required autofocus placeholder="Enter label Name"
+                                maxlength="100">
                         </div>
 
                         <div class="input-field">
@@ -59,14 +59,14 @@
                                 [(ngModel)]="validatorModel.mandatory" #mandatory="ngModel">
                             <label class="form-check-label" for="mandatory"> Mandatory</label>
                         </div>
-                        <div class="input-field">
+                        <div class="input-field" *ngIf="model.type!='Dropdown' && model.type!='Date'">
                             <label class="form-check-label" for="inlineRadio2">Minlength</label>
 
                             <input type="number" [(ngModel)]="validatorModel.minlength" #minlength="ngModel"
                                 name="minlength" id="minlength" autofocus placeholder="minlength" maxlength="20"
                                 min="0">
                         </div>
-                        <div class="input-field">
+                        <div class="input-field" *ngIf="model.type!='Dropdown' && model.type!='Date'">
                             <label class="form-check-label" for="inlineRadio2">Maxlength</label>
                             <input type="number" [(ngModel)]="validatorModel.maxlength" #maxlength="ngModel"
                                 name="maxlength" name="maxlength" id="maxlength" autofocus placeholder="maxlength"
@@ -74,15 +74,17 @@
                         </div>
 
                     </div>
-                    <div>
+                    <div style="float: right; width: 300px; padding: 10px;">
                         <!-- class="col-md-12 text-right mt-4 mb-4 borderTop" -->
-                        <button>
-                            <span class="btnText" style="padding: 8px 15px;" (click)="addnew()">Add</span>
+                        <button >
+                            <span class="btnText"(click)="addnew()">Add</span>
                             <i class="uil uil-navigator"></i>
                         </button>
                     </div>
-                    <div class=" col-md-12 table-responsive pl-0 pr-0">
-                        <table class="mb-0 table table-striped">
+                </div>
+                <div>
+                    <div class="table-wrapper">
+                        <table class="fl-table" >
                             <thead>
                                 <tr>
                                     <th>Sequence</th>
@@ -113,6 +115,13 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div style="float: right; width: 300px; padding: 10px;">
+                    <!-- class="col-md-12 text-right mt-4 mb-4 borderTop" -->
+                    <button>
+                        <span class="btnText" (click)="Create()">Create Form</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
                 </div>
             </div>
         </form>

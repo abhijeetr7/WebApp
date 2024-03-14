@@ -1,0 +1,57 @@
+[ 
+   {
+        "id": 1,
+        "sequence": 1,
+        "label": "First Name",
+        "type": "Textarea",
+        "validator": {
+            "mandatory": true,
+            "minlength": 5,
+            "maxlength": 15
+        }
+    },
+    {
+        "id": 2,
+        "sequence": 2,
+        "label": "Middle Name",
+        "type": "Textarea",
+        "validator": {
+            "mandatory": true,
+            "minlength": 5,
+            "maxlength": 15
+        }
+    },
+    {
+        "id": 3,
+        "sequence": 3,
+        "label": "Last Name",
+        "type": "Textarea",
+        "validator": {
+            "mandatory": true,
+            "minlength": 5,
+            "maxlength": 15
+        }
+    },
+    {
+        "id": 4,
+        "sequence": 4,
+        "label": "Date Of Birth",
+        "type": "Date",
+        "validator": {
+            "mandatory": true,
+            "minlength": null,
+            "maxlength": null
+        }
+    },
+    {
+        "id": 5,
+        "sequence": 5,
+        "label": "Phone",
+        "type": "number",
+        "validator": {
+            "mandatory": true,
+            "minlength": 10,
+            "maxlength": 12
+        }
+    }
+]
